@@ -1,0 +1,73 @@
+<!-- mcp23017-port-in-->
+<script type="text/javascript">
+    RED.nodes.registerType('mcp23017-port-in',{
+        category: 'config',
+        defaults: {
+            chip: {value:"",type:"mcp23017-chip"},
+            port: {value:"0",required:true},
+            direction: {value: "0xFF"},
+            pullup: {value: false}
+        },
+        label: function() {
+            const chip = RED.nodes.node(this.chip);
+            return "Port: " + this.port + " << " + chip.label();
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="mcp23017-port-in">
+    <div class="form-row">
+        <label for="node-config-input-chip"><i class="icon-bookmark"></i> Chip</label>
+        <input type="text" id="node-config-input-chip">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-port"><i class="icon-bookmark"></i> Port</label>
+        <select id="node-config-input-port">
+            <option value="0" selected>A</option>
+            <option value="1">B</option>
+        </select>
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-pullup"><i class="icon-bookmark"></i> Pullup</label>
+        <input type="text" id="node-config-input-pullup">
+    </div>
+</script>
+
+<!-- mcp23017-port-out-->
+<script type="text/javascript">
+    RED.nodes.registerType('mcp23017-port-out',{
+        category: 'config',
+        defaults: {
+            chip: {value:"",type:"mcp23017-chip"},
+            port: {value:"0",required:true},
+            direction: {value: "0x00"},
+            init: {value: "0xFF"}
+        },
+        label: function() {
+            const chip = RED.nodes.node(this.chip);
+            return "Port: " + this.port + " >> " + chip.label();
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="mcp23017-port-out">
+    <div class="form-row">
+        <label for="node-config-input-chip"><i class="icon-bookmark"></i> Chip</label>
+        <input type="text" id="node-config-input-chip">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-port"><i class="icon-bookmark"></i> Port</label>
+        <select id="node-config-input-port">
+            <option value="0" selected>A</option>
+            <option value="1">B</option>
+        </select>
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-init"><i class="icon-bookmark"></i> Init</label>
+        <select id="node-config-input-init">
+            <option value="-1">No init</option>
+            <option value="0x00">Low</option>
+            <option value="0xFF" selected>High</option>
+        </select>
+    </div>
+</script>

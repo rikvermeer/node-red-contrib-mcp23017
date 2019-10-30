@@ -1,0 +1,14 @@
+{
+    "name": "node-red-contrib-mcp23017",
+    "node-red": {
+        "nodes": {
+            "mcp23017-chip": "mcp23017-chip.js",
+            "mcp23017-port": "mcp23017-port.js",
+            "mcp23017-out": "mcp23017-out.js"
+        }
+    },
+    "version": "1.0.0",
+    "dependencies": {
+        "mcp23017": "github:rikvermeer/mcp23017#master"
+    }
+}

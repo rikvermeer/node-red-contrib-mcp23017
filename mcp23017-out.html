@@ -1,0 +1,31 @@
+<script type="text/javascript">
+    RED.nodes.registerType('mcp23017-out',{
+        category: 'function',
+        color: '#a6bbcf',
+        defaults: {
+            name: {value:""},
+            port: {value:"", type:"mcp23017-port-out"}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "file.png",
+        label: function() {
+            return this.name||"mcp23017-out";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="mcp23017-out">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-port"><i class="icon-tag"></i> Port</label>
+        <input type="text" id="node-input-port" placeholder="MCP23017 port">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="mcp23017-out">
+    <p>A simple node that converts the message payloads into all mcp23017-out characters</p>
+</script>
